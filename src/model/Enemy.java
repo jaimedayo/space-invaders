@@ -9,6 +9,8 @@ public class Enemy extends Character {
 		// TODO Auto-generated constructor stub
 	}
 	public void draw() {
-		
+		app.rectMode(app.CENTER);
+		app.fill(200,0,0);
+		app.rect(posX, posY, 30, 30);
 	}
 }
