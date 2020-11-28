@@ -121,7 +121,7 @@ for (int i = 0; i < control.getBllets().size(); i++) {
 
 	//movimiento de los enemigos segun el mapa
 for (int i = 0; i < control.getEnemies().size(); i++) {
-	delay(50);
+	
 	if(matrix[control.getEnemies().get(i).posY][control.getEnemies().get(i).posX]==3) {
 		;control.getEnemies().get(i).move(2);
 		
@@ -132,6 +132,7 @@ for (int i = 0; i < control.getEnemies().size(); i++) {
 	if(matrix[control.getEnemies().get(i).posY][control.getEnemies().get(i).posX]==0) {
 		control.getEnemies().get(i).move(0);
 		
-	}}}
-
+	}
+	}
+}
 }
