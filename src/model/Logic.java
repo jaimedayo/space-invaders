@@ -33,9 +33,13 @@ public class Logic {
 			for (int j = 1; j < 3; j++) {
 			Enemy e= new Enemy(i, j, app);
 				enemyList.add(e);
-			}
-		}
-		
+			}}
+	}
+	public void removeBullet(int i) {
+		bulletList.remove(i);
+	}
+	public void removeEnemy(int i) {
+		enemyList.remove(i);
 	}
 	public void prota(int posX, int posY) {
 		
@@ -46,10 +50,10 @@ public class Logic {
 	public void moveProta(int i){
 		switch (i) {
 		case 0:
-			prota.move(0);
+				prota.move(0);
 			break;
-case 1:
-	prota.move(1);
+		case 1:
+				prota.move(1);
 			break;
 		}
 	}
@@ -58,5 +62,19 @@ case 1:
 	}public Prota getProta() {
 		return prota;
 	}
-	
+	public ArrayList<Bullet> getBulletList() {
+		return bulletList;
+	}
+	public void contact() {
+		for (int i = 0; i < bulletList.size(); i++) {
+			for (int j = 0; j < enemyList.size(); j++) {
+				float d = app.dist(bulletList.get(i).getPosX(), bulletList.get(i).getPosY(),
+						enemyList.get(j).getPosX(), enemyList.get(j).getPosY());
+		if(d<30) {
+			removeBullet(i);
+			removeEnemy(j);
+		}
+			}
+		}
+	}
 }

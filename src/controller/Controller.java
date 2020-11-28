@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import processing.core.PApplet;
 import model.Logic;
 import model.Prota;
+import model.Bullet;
 import model.Enemy;
 
 public class Controller {
@@ -29,5 +30,22 @@ public Prota getProta() {
 }
 public ArrayList<Enemy> getEnemies() {
 	return logic.getEnemyList();
+}
+public ArrayList<Bullet> getBllets() {
+	return logic.getBulletList();
+	
+}
+public void erazeBullet(int i) {
+	logic.removeBullet(i);
+	
+}
+public void erazeEnemy(int i) {
+	logic.removeEnemy(i);
+	
+}
+public void contact() {
+	logic.contact();
+	// TODO Auto-generated method stub
+	
 }
 }
