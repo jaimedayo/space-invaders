@@ -14,13 +14,13 @@ public Character(int posX,int posY, PApplet app) {
 public void move(int dir) {
 	switch (dir) {
 	case 0:
-		if(posX<5) {
+		if(posX<7) {
 		posX++;
 		}
 		break;
 
 case 1:
-	if(posX>=1) {
+	if(posX>0) {
 	posX--;
 	}
 		break;

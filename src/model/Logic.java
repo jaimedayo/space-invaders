@@ -29,8 +29,8 @@ public class Logic {
 		bulletList.add(e);
 	} 
 	public void addEnemy() {
-		for (int i = 0; i < 7; i++) {
-			for (int j = 0; j < 2; j++) {
+		for (int i = 1; i < 7; i++) {
+			for (int j = 1; j < 3; j++) {
 			Enemy e= new Enemy(i, j, app);
 				enemyList.add(e);
 			}

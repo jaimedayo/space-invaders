@@ -11,6 +11,6 @@ public class Enemy extends Character {
 	public void draw() {
 		app.rectMode(app.CENTER);
 		app.fill(200,0,0);
-		app.rect((posX*50)+25, (posY*50)+25, 30, 30);
+		app.rect((posX*50)-25, (posY*50)-25, 30, 30);
 	}
 }
