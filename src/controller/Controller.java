@@ -43,9 +43,5 @@ public void erazeEnemy(int i) {
 	logic.removeEnemy(i);
 	
 }
-public void contact() {
-	logic.contact();
-	// TODO Auto-generated method stub
-	
-}
+
 }
