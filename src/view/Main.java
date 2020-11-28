@@ -2,7 +2,7 @@ package view;
 
 import controller.Controller;
 import model.Enemy;
-import model.Figure;
+import model.Prota;
 import processing.core.PApplet;
 
 import java.util.Collections;
@@ -51,19 +51,22 @@ public void draw() {
 		Enemy enemies = control.getEnemies().get(i);
 		enemies.draw();
 	}
+	control.getProta().draw();
 	
 }
 public void keyPressed() {
 	switch (keyCode) {
 	case RIGHT:
+		
 		control.moveProta(0);
 		break;
-
-case LEFT:
-	control.moveProta(1);
+		case LEFT:
+			
+			control.moveProta(1);
 		break;
-case UP:
-	control.shot(x, 6);
+		case UP:
+			
+			control.shot(control.getProta().getPosX(), 6);
 	break;
 	}
 }

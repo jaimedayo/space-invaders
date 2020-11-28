@@ -44,7 +44,14 @@ public class Logic {
 		//dar la orden a todo el arreglo de que se mueva
 	}
 	public void moveProta(int i){
-		
+		switch (i) {
+		case 0:
+			prota.move(0);
+			break;
+case 1:
+	prota.move(1);
+			break;
+		}
 	}
 	public ArrayList<Enemy> getEnemyList() {
 		return enemyList;
