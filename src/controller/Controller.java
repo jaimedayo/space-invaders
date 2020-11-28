@@ -1,5 +1,33 @@
 package controller;
 
-public class Controller {
+import java.util.ArrayList;
+import processing.core.PApplet;
+import model.Logic;
+import model.Prota;
+import model.Enemy;
 
+public class Controller {
+Logic logic;
+	PApplet app;
+	public Controller(PApplet app) {
+		this.app=app;
+		this.logic= new Logic(app);
+	}
+	public void start() {
+		logic.startGame();
+	}
+	public void moveProta(int i) {
+		logic.moveProta(i);
+		
+	}
+	public void shot(int posX,int posY) {
+		logic.addBullet(posX, posY);
+		
+	}
+public Prota getProta() {
+	return logic.getProta();
+}
+public ArrayList<Enemy> getEnemies() {
+	return logic.getEnemyList();
+}
 }

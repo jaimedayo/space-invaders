@@ -11,6 +11,6 @@ public class Prota extends Character {
 public void draw() {
 	app.rectMode(app.CENTER);
 	app.fill(0,0,200);
-	app.rect(posX, posY, 30, 30);
+	app.rect((posX*50)+25, (posY*50)+25, 30, 30);
 }
 }
