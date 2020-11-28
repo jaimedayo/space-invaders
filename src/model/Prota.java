@@ -13,4 +13,8 @@ public void draw() {
 	app.fill(0,0,200);
 	app.rect((posX*50)+25, (posY*50)+25, 30, 30);
 }
+@Override
+public void run() {
+	draw();
+}
 }

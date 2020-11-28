@@ -65,16 +65,6 @@ public class Logic {
 	public ArrayList<Bullet> getBulletList() {
 		return bulletList;
 	}
-	public void contact() {
-		for (int i = 0; i < bulletList.size(); i++) {
-			for (int j = 0; j < enemyList.size(); j++) {
-				float d = app.dist(bulletList.get(i).getPosX(), bulletList.get(i).getPosY(),
-						enemyList.get(j).getPosX(), enemyList.get(j).getPosY());
-		if(d<30) {
-			removeBullet(i);
-			removeEnemy(j);
-		}
-			}
-		}
-	}
+	
+	
 }

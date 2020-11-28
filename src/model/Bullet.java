@@ -9,7 +9,7 @@ public class Bullet extends Character{
 		// TODO Auto-generated constructor stub
 	}
 public void movebullet() {
-	posY= posY-3;
+	posY= posY-10;
 }
 public void draw() {
 	app.fill(200);

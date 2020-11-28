@@ -1,5 +1,7 @@
 package model;
 
+import java.util.concurrent.Delayed;
+
 import processing.core.PApplet;
 
 public class Enemy extends Character {
@@ -12,5 +14,13 @@ public class Enemy extends Character {
 		app.rectMode(app.CENTER);
 		app.fill(200,0,0);
 		app.rect((posX*50)-25, (posY*50)-25, 30, 30);
+	}
+	public void run() {
+	
+		
+	}
+	public void move(int dir) {
+		app.delay(20);
+		super.move(dir);
 	}
 }

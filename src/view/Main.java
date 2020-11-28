@@ -10,7 +10,8 @@ import java.util.Collections;
 
 public class Main extends PApplet {
 	Controller control;
-	
+	boolean perder;
+	boolean ganar;
 	int t;
 	int cont;
 	int [][] matrix; 
@@ -42,9 +43,11 @@ public void setup() {
 public void draw() {
 	
 	background(0);
+	//funciones llamdas desde abajo
 	drawObjects();
 	moveObjects();
-
+	CleanArrays();
+	
 // medidor de coliciones entre balas y enemigos
 	if(control.getBllets()==null) {
 		
@@ -58,19 +61,37 @@ public void draw() {
 					(control.getEnemies().get(j).getPosX()),( control.getEnemies().get(j).getPosY()*50)-25);
 			}else { d=100;}
 			if(d<30) {
-				
 				control.erazeEnemy(j);
 				control.erazeBullet(i);
-				
-				
+				if(!perder) {
+				cont++;
+				System.out.println("la cantidad de enemigos elimidos es "+cont);
+				}
 			}
 		}
 	}
 	}
-	CleanArrays();
+	// medidor en caso de perder
+	for (int j = 0; j < control.getEnemies().size(); j++) {
+		if((control.getProta().getPosX()==(control.getEnemies().get(j).getPosX()-2)
+				&&(control.getProta().getPosY())==(control.getEnemies().get(j).getPosY())-1)){
+			if(perder==false) {
+			System.out.println("PERDISTE");
+			perder=true;
+			}
+			
+		}
+	}
+	
+	if (cont>=12) {
+		System.out.println("GANASTE");
+		perder=true;
+	}
 }
 
 public void keyPressed() {
+	
+	if(!perder) {
 	switch (keyCode) {
 	case RIGHT:
 		control.moveProta(0);
@@ -82,6 +103,7 @@ public void keyPressed() {
 			control.shot(control.getProta().getPosX(),320);
 	break;
 	}
+	}
 }
 public void CleanArrays() {
 	//limpieza de los objetos que se salen de la pantalla
@@ -90,20 +112,17 @@ if(control.getBllets().get(i).getPosY()<10)
 	control.erazeBullet(i);
 }
 for (int i = 0; i < control.getEnemies().size(); i++) {
-if(control.getEnemies().get(i).getPosY()>6&&control.getEnemies().get(i).getPosX()>5)
+if(control.getEnemies().get(i).getPosY()>6&&control.getEnemies().get(i).getPosX()>6)
 	control.erazeEnemy(i);
 
 }
 }
 
 public void drawObjects() {
-	//dibujar enemigos
-	for (int i = 0; i < control.getEnemies().size(); i++) {
-		Enemy enemies = control.getEnemies().get(i);
-		enemies.draw();
-	}
+
 	//dbujar protagonista
 	control.getProta().draw();
+	//dibujar enemigos
 	for (int i = 0; i < control.getEnemies().size(); i++) {
 		Enemy enemies = control.getEnemies().get(i);
 		enemies.draw();
@@ -135,4 +154,5 @@ for (int i = 0; i < control.getEnemies().size(); i++) {
 	}
 	}
 }
+
 }

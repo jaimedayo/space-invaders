@@ -1,7 +1,7 @@
 package model;
 import processing.core.PApplet;
 
-abstract class Character{
+abstract class Character implements Runnable{
 public int posX;
 public int posY;
 protected PApplet app;
